@@ -11,13 +11,6 @@ namespace PollPoll.Data.Entities
     [Table("Questions")]
     public class QuestionEntity
     {
-        public QuestionEntity() { }
-        public QuestionEntity(string title, bool isMultipleChoice)
-        {
-            Title = title;
-            IsMultipleChoice = isMultipleChoice;
-        }
-
         [Key]
         public int Id { get; set; }
 
@@ -29,6 +22,6 @@ namespace PollPoll.Data.Entities
         [DefaultValue(false)]
         public bool IsMultipleChoice { get; set; }
 
-        public virtual List<OptionEntity> Options { get; set; }
+        public virtual List<OptionEntity> Options { get; set; } = new List<OptionEntity>();
     }
 }

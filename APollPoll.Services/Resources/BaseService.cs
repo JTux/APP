@@ -16,27 +16,30 @@ namespace APollPoll.Services.Resources
         where TUpdate : class
     {
         protected readonly AppDbContext _context = new AppDbContext();
-        protected DbSet Entities => _context.Set(typeof(TEntity));
+        protected DbSet EntityDbSet => _context.Set<TEntity>();
 
         // Create
         public async Task<bool> CreateAsync(TCreate createModel)
         {
             var entity = GetEntity(createModel);
-            Entities.Add(entity);
+            EntityDbSet.Add(entity);
             return await _context.SaveChangesAsync() == 1;
         }
 
         // Read
-        public async Task<TDetail> GetDetailAsync(int id)
+        public async Task<TDetail> GetByIdAsync(int id)
         {
             var entity = await GetEntityAsync(id);
+            if (entity is null)
+                return null;
+
             return GetDetail(entity);
         }
 
         // Read All
         public async Task<List<TListItem>> GetAllAsync()
         {
-            var entities = await Entities.ToListAsync() as List<TEntity>;
+            var entities = (await EntityDbSet.ToListAsync()).Select(e => e as TEntity);
             return entities.Select(e => GetListItem(e)).ToList();
         }
 
@@ -52,13 +55,13 @@ namespace APollPoll.Services.Resources
         public async Task<bool> DeleteAsync(int id)
         {
             var entity = await GetEntityAsync(id);
-            Entities.Remove(entity);
+            EntityDbSet.Remove(entity);
             return await _context.SaveChangesAsync() == 1;
         }
 
         protected async Task<TEntity> GetEntityAsync(int id)
         {
-            return await Entities.FindAsync(id) as TEntity;
+            return await EntityDbSet.FindAsync(id) as TEntity;
         }
 
         protected abstract TEntity GetEntity(TCreate model);
