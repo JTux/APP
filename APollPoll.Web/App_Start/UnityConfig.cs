@@ -1,4 +1,6 @@
 using APollPoll.Services.Questions.Service;
+using APollPoll.Web.App_Start;
+using AutoMapper;
 using System;
 using System.Web.Mvc;
 using Unity;
@@ -38,7 +40,10 @@ namespace APollPoll.Web
         /// </remarks>
         public static void RegisterTypes(IUnityContainer container)
         {
+            container.RegisterInstance(MapperConfig.GetMapper());
+
             container.RegisterType<IQuestionService, QuestionService>();
+
 
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
         }

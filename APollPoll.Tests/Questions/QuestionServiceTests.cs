@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using APollPoll.Services.Questions.Models;
 using APollPoll.Services.Questions.Service;
+using APollPoll.Web.App_Start;
+using AutoMapper;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace APollPoll.Tests.Questions
@@ -14,7 +16,7 @@ namespace APollPoll.Tests.Questions
         [TestInitialize]
         public void Arrange()
         {
-            _service = new QuestionService();
+            _service = new QuestionService(MapperConfig.GetMapper());
         }
 
         [TestMethod]
