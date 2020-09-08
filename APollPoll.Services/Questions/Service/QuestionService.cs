@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace APollPoll.Services.Questions
+namespace APollPoll.Services.Questions.Service
 {
-    public class QuestionService : BaseService<QuestionEntity, QuestionCreate, QuestionDetail, QuestionListItem, QuestionUpdate>
+    public class QuestionService : BaseService<QuestionEntity, QuestionCreate, QuestionDetail, QuestionListItem, QuestionUpdate>, IQuestionService
     {
         protected override QuestionDetail GetDetail(QuestionEntity entity)
         {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using APollPoll.Services.Questions;
 using APollPoll.Services.Questions.Models;
+using APollPoll.Services.Questions.Service;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace APollPoll.Tests.Questions

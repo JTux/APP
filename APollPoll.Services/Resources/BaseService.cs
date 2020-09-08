@@ -8,7 +8,8 @@ using System.Threading.Tasks;
 
 namespace APollPoll.Services.Resources
 {
-    public abstract class BaseService<TEntity, TCreate, TDetail, TListItem, TUpdate>
+    public abstract class BaseService<TEntity, TCreate, TDetail, TListItem, TUpdate> 
+        : IService<TEntity, TCreate, TDetail, TListItem, TUpdate>
         where TEntity : class
         where TCreate : class
         where TDetail : class
@@ -39,8 +40,8 @@ namespace APollPoll.Services.Resources
         // Read All
         public async Task<List<TListItem>> GetAllAsync()
         {
-            var entities = (await EntityDbSet.ToListAsync()).Select(e => e as TEntity);
-            return entities.Select(e => GetListItem(e)).ToList();
+            var entities = await EntityDbSet.ToListAsync().ConfigureAwait(false);
+            return entities.Select(e => GetListItem(e as TEntity)).ToList();
         }
 
         // Update
