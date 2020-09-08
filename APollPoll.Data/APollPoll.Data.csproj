@@ -51,7 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Contexts\AppContext.cs" />
+    <Compile Include="Contexts\AppDbContext.cs" />
     <Compile Include="Entities\OptionEntity.cs" />
     <Compile Include="Entities\QuestionEntity.cs" />
     <Compile Include="Migrations\202009081508113_DataLayerScaffold.cs" />
