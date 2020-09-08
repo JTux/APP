@@ -43,5 +43,11 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\APollPoll.Data\APollPoll.Data.csproj">
+      <Project>{6bf0e3f3-a87b-4a44-9b81-8561fc99eadb}</Project>
+      <Name>APollPoll.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
