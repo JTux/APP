@@ -1,12 +1,21 @@
 ﻿body {
     padding-top: 50px;
-    padding-bottom: 20px;
+    background-color: var(--accent);
+    color: var(--light-text);
+    font-family: Overpass;
+    background-image: url('../Assets/transparentbg.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+    color: var(--accent-text);
+    background-color: var(--light-grey);
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -22,3 +31,179 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.flex-filler {
+    flex-grow: 1;
+}
+
+.center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.helpqueue-header {
+    margin-top: .5em;
+    margin-bottom: 1em;
+}
+
+.validation-text {
+    color: var(--primary-dark);
+    text-transform: uppercase;
+}
+
+a, label, th, h1, h2, h3, h4, h5, h6, dt, .btn, .nav li {
+    text-transform: uppercase;
+}
+
+img {
+    max-width: 100%;
+}
+
+hr {
+    border-color: var(--accent-transparent);
+    margin: 2em 0;
+}
+
+a {
+    color: var(--primary-text);
+}
+
+a:hover {
+    color: var(--primary-dark);
+}
+
+.login-header {
+    background-color: var(--primary-bg-color);
+    color: white;
+    text-align: center;
+}
+
+    .login-header h1 {
+        margin-top: 0;
+    }
+
+.efa-logo {
+    width: 350px;
+    border-radius: 50%;
+}
+
+.brand-logo:hover {
+    background-color: transparent !important;
+}
+
+.nav-logo {
+    height: 50px;
+    padding: 0;
+    margin-right: 15px;
+}
+
+@media (max-width: 768px) {
+    .nav-logo {
+        margin-right: 0;
+    }
+}
+
+.inactive-code {
+    font-style: italic;
+}
+
+    .inactive-code::after {
+        content: "(Inactive)";
+        color: var(--primary-dark);
+    }
+
+.btn-danger {
+    background-color: var(--primary-bg-color);
+}
+
+    .btn-danger:hover {
+        background-color: var(--primary-dark);
+    }
+
+.btn-dark {
+    background-color: var(--accent);
+}
+
+    .btn-dark, .btn-dark:hover, .btn-dark:active {
+        color: white !important;
+    }
+
+        .btn-dark:hover {
+            background-color: var(--accent-dark);
+        }
+
+.btn-warning {
+    background-color: var(--gold-accent);
+}
+
+input[type="checkbox"] {
+    color: black;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    height: 17px;
+    width: 17px;
+    background-image: url('../Assets/uncheckbox.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+    background-color: white;
+    border-radius: 3px;
+    position: relative !important;
+    margin: 0 !important;
+}
+
+    input[type="checkbox"]:checked {
+        background-image: url('../Assets/checkbox.png');
+    }
+
+.dropdown-menu > li {
+    text-transform: uppercase;
+}
+
+.dropdown-item {
+    text-align: center;
+    padding: 0;
+    transition: ease .35s;
+}
+
+    .dropdown-item > a, .dropdown-menu > li > a {
+        text-decoration: none;
+        color: var(--accent);
+        transition: ease .35s;
+        display: block;
+        width: 100%;
+        padding: .25em .75em;
+    }
+
+        .dropdown-item > a:hover, .dropdown-menu > li > a:hover {
+            background-color: var(--primary-bg-color);
+            color: white;
+            transition: ease .35s;
+        }
+
+.item-options {
+    border: none;
+    background-color: transparent;
+}
+
+    .item-options:hover {
+        background-color: var(--primary-bg-color);
+        border-radius: 4px;
+    }
+
+.active-tab {
+    background-color: var(--primary-bg-color) !important;
+}
+
+.cohort-items {
+    text-transform: uppercase;
+    padding: 0;
+}
+
+    .cohort-items li {
+        display: inline;
+    }

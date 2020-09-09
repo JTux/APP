@@ -1,0 +1,43 @@
+﻿@model IEnumerable<APollPoll.Services.Questions.Models.QuestionListItem>
+
+@{
+    ViewBag.Title = "Questions";
+}
+
+<div class="row" style="margin-top: 15px; margin-bottom: 6px;">
+    <h2 class="col-md-6" style="margin-top: 0;">
+        Questions
+    </h2>
+    <div class="col-md-6 text-right">
+        @Html.ActionLink("Create New Question", "Create", null, new { @class = "btn btn-danger" })
+    </div>
+</div>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th style="text-align: right;">
+            @Html.DisplayNameFor(model => model.OptionCount)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td style="text-align: right;">
+                @Html.DisplayFor(modelItem => item.OptionCount)
+            </td>
+            <td style="text-align: right;">
+                @Html.ActionLink("Add New Answer", "Add", "Option", new { id = item.Id }, new { @class = "btn btn-danger" })
+                @Html.ActionLink("See Answers", "Details", new { id = item.Id }, new { @class = "btn btn-dark" })
+            </td>
+        </tr>
+    }
+
+</table>

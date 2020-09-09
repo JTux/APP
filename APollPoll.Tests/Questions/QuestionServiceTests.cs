@@ -52,7 +52,7 @@ namespace APollPoll.Tests.Questions
             var updateModel = new QuestionUpdate
             {
                 Id = 1,
-                IsMultipleChoice = false,
+                IsMultipleChoice = true,
                 Title = "Updated Title"
             };
             Assert.IsTrue(_service.UpdateAsync(updateModel).Result);

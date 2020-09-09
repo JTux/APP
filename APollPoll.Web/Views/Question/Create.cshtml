@@ -1,0 +1,49 @@
+﻿@model APollPoll.Services.Questions.Models.QuestionCreate
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<div class="col-md-8" style="margin: auto;">
+    <h2 class="text-center">Create New Question</h2>
+</div>
+<hr />
+<div class="col-md-12">
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.TextAreaFor(model => model.Title, new { @class = "form-control", style="min-width: 100%; width: 100%;"} )
+                    @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.IsMultipleChoice, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    <div class="checkbox">
+                        @Html.EditorFor(model => model.IsMultipleChoice)
+                        @Html.ValidationMessageFor(model => model.IsMultipleChoice, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="pull-right" style="margin-right: 15px;">
+                    <input type="submit" value="Create" class="btn btn-danger" />
+                    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-dark" })
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

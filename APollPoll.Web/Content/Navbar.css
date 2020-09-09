@@ -1,0 +1,24 @@
+﻿.navbar-brand:hover {
+    text-align: center;
+    background-color: var(--primary-bg-color) !important;
+}
+
+.navbar-nav li:hover {
+    background-color: var(--primary-bg-color);
+}
+
+.navbar-inverse {
+    border: none;
+}
+
+.navbar, .navbar a, .navbar li {
+    color: white !important;
+}
+
+.navbar-right {
+    margin-right: 0;
+}
+
+.navbar-toggle {
+    right: 15px;
+}

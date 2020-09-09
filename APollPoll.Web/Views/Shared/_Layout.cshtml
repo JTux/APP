@@ -7,7 +7,7 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
-<body>
+<body style="height: 100vh;">
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -16,18 +16,21 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("A Poll Poll", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                <a class="navbar-brand brand-logo" style="padding: 0;" href="https://elevenfifty.org/" target="_blank">
+                    <img class="nav-logo" src="https://elevenfifty.org/wp-content/uploads/2019/03/mobile-shield.png" />
+                </a>
+                @Html.ActionLink("A Poll Poll".ToUpper(), "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Questions", "Index", "Question")</li>
                 </ul>
             </div>
         </div>
     </div>
-    <div class="container body-content">
+    <div class="container body-content" style="display: flex; flex-direction: column; min-height: 100%;">
         @RenderBody()
-        <hr />
+        <div class="flex-filler"></div>
         <footer>
             <p>#APP @DateTime.Now.Year</p>
         </footer>

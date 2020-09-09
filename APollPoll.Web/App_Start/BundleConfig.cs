@@ -24,6 +24,11 @@ namespace APollPoll.Web
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
+                      "~/Content/Colors.css",
+                      "~/Content/Navbar.css",
+                      "~/Content/Requests.css",
+                      "~/Content/Tables.css",
+                      "~/Content/Footer.css",
                       "~/Content/site.css"));
         }
     }

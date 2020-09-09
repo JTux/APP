@@ -1,0 +1,16 @@
+﻿:root {
+    --primary-dark: #B63234;
+    --primary-bg-color: #e33e42;
+    --primary-text: #e33e42;
+    --primary-light: #e66365;
+    --accent: #2d2d2d;
+    --accent-dark: #1d1d1d;
+    --accent-transparent: #54565A50;
+    --accent-text: #54565A;
+    --light-grey: #efefef;
+    --blue-accent-dark: #2D7CA4;
+    --blue-accent: #438BB8;
+    --blue-accent-light: #b3d4fc;
+    --light-text: #efefef;
+    --gold-accent: #fdb715;
+}

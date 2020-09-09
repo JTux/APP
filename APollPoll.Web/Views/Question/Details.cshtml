@@ -1,0 +1,47 @@
+﻿@model APollPoll.Services.Questions.Models.QuestionDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="text-center">
+    <h1>@Model.Title</h1>
+    @if (Model.IsMultipleChoice)
+    {
+        <h4>Multiple Choice Answer</h4>
+    }
+    else
+    {
+        <h4>Single Choice Answer</h4>
+    }
+</div>
+
+<hr />
+
+@if (Model.Options.Count > 0)
+{
+    <h3 class="text-center">
+        Possible Options
+    </h3>
+    <div>
+        @foreach (var item in Model.Options)
+        {
+            @Html.DisplayFor(modelItem => item.Text)
+        }
+    </div>
+}
+else
+{
+    <div style="position: relative; min-height: 14em; text-align: center;">
+        <h4 class="center">
+            This question currently has no possibly answers. This means that the person who added this question didn't even add an option. They should be ashamed. Go ahead and be better than them: @Html.ActionLink("Add a new option now", "Add", "Option", new { id = Model.Id }, null)!
+        </h4>
+    </div>
+}
+
+<hr />
+
+<p class="text-right">
+    @Html.ActionLink("Add Option", "Add", "Option", new { id = Model.Id }, new { @class = "btn btn-danger" })
+    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-dark" })
+</p>
