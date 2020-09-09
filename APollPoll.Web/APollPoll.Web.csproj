@@ -154,6 +154,7 @@
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\UnityMvcActivator.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\OptionController.cs" />
     <Compile Include="Controllers\QuestionController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -205,6 +206,7 @@
     <Content Include="Views\Question\Index.cshtml" />
     <Content Include="Views\Question\Create.cshtml" />
     <Content Include="Views\Question\Details.cshtml" />
+    <Content Include="Views\Option\_AddPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

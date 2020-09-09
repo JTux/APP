@@ -4,29 +4,21 @@
     ViewBag.Title = "Details";
 }
 
-<div class="text-center">
-    <h1>@Model.Title</h1>
-    @if (Model.IsMultipleChoice)
-    {
-        <h4>Multiple Choice Answer</h4>
-    }
-    else
-    {
-        <h4>Single Choice Answer</h4>
-    }
-</div>
-
-<hr />
+<h1>
+    @Model.Title
+    <span style="font-style: italic; font-size: 2.4rem;">@(Model.IsMultipleChoice?"Multiple":"Single") Answer Choice</span>
+</h1>
 
 @if (Model.Options.Count > 0)
 {
-    <h3 class="text-center">
-        Possible Options
-    </h3>
-    <div>
+    <div class="row" style="margin-left: 0;">
         @foreach (var item in Model.Options)
         {
-            @Html.DisplayFor(modelItem => item.Text)
+            <div class="col-md-4">
+                <div class="speech-bubble">
+                    @Html.DisplayFor(modelItem => item.Text)
+                </div>
+            </div>
         }
     </div>
 }
@@ -34,14 +26,18 @@ else
 {
     <div style="position: relative; min-height: 14em; text-align: center;">
         <h4 class="center">
-            This question currently has no possibly answers. This means that the person who added this question didn't even add an option. They should be ashamed. Go ahead and be better than them: @Html.ActionLink("Add a new option now", "Add", "Option", new { id = Model.Id }, null)!
+            This question currently has no possibly answers. This means that the person who added this question didn't even add an option. They should be ashamed. Go ahead and be better than them: <a id="ModalBtn2">Add a new option now</a>!
         </h4>
     </div>
 }
 
 <hr />
 
-<p class="text-right">
-    @Html.ActionLink("Add Option", "Add", "Option", new { id = Model.Id }, new { @class = "btn btn-danger" })
+<div class="text-right">
+    @Html.Partial("~/Views/Option/_AddPartial.cshtml", new APollPoll.Services.Options.Models.OptionCreate { QuestionId = Model.Id })
     @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-dark" })
-</p>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

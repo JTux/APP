@@ -34,7 +34,6 @@
                 @Html.DisplayFor(modelItem => item.OptionCount)
             </td>
             <td style="text-align: right;">
-                @Html.ActionLink("Add New Answer", "Add", "Option", new { id = item.Id }, new { @class = "btn btn-danger" })
                 @Html.ActionLink("See Answers", "Details", new { id = item.Id }, new { @class = "btn btn-dark" })
             </td>
         </tr>

@@ -72,9 +72,9 @@ a {
     color: var(--primary-text);
 }
 
-a:hover {
-    color: var(--primary-dark);
-}
+    a:hover {
+        color: var(--primary-dark);
+    }
 
 .login-header {
     background-color: var(--primary-bg-color);
@@ -207,3 +207,46 @@ input[type="checkbox"] {
     .cohort-items li {
         display: inline;
     }
+
+.speech-bubble {
+    position: relative;
+    background: var(--accent-dark);
+    border-radius: .4em;
+    padding: 20px 20px;
+    color: white;
+    margin-bottom: 5px;
+    transition: .3s;
+    font-weight: bold;
+}
+
+    .speech-bubble:after {
+        content: '';
+        position: absolute;
+        left: 12px;
+        top: 65%;
+        width: 0;
+        height: 0;
+        border: 2.063em solid transparent;
+        border-right-color: var(--accent-dark);
+        border-left: 0;
+        border-top: 0;
+        margin-top: -1.031em;
+        margin-left: -2.062em;
+        transition: .3s;
+    }
+
+    .speech-bubble:hover {
+        background-color: var(--primary-bg-color);
+        transition: .3s;
+        cursor: pointer;
+    }
+
+        .speech-bubble:hover::after {
+            border-right-color: var(--primary-bg-color);
+            transition: .3s;
+            cursor: pointer;
+        }
+
+#ModalBtn2:hover {
+    cursor: pointer;
+}
