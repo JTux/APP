@@ -1,4 +1,5 @@
-﻿using System;
+﻿using APollPoll.Services.Options.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
@@ -12,10 +13,13 @@ namespace APollPoll.Services.Questions.Models
     {
         [Required]
         [DisplayName("Question")]
+        [MinLength(7), MaxLength(50)]
         public string Title { get; set; }
 
         [Required]
-        [DisplayName("Multiple Choice")]
+        [DisplayName("Allow Multiple Selections")]
         public bool IsMultipleChoice { get; set; }
+
+        public List<OptionCreate> Options { get; set; } = new List<OptionCreate>();
     }
 }

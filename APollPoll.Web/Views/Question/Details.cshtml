@@ -29,9 +29,16 @@ else
             This question currently has no possibly answers. This means that the person who added this question didn't even add an option. They should be ashamed. Go ahead and be better than them: <a id="ModalBtn2">Add a new option now</a>!
         </h4>
     </div>
-}
 
-<hr />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+        $(@Html.Raw("ModalBtn2")).click(function () {
+            $(@Html.Raw("OptionCreateModal")).modal('show');
+        });
+    });
+    </script>
+}
 
 <div class="text-right">
     @Html.Partial("~/Views/Option/_AddPartial.cshtml", new APollPoll.Services.Options.Models.OptionCreate { QuestionId = Model.Id })

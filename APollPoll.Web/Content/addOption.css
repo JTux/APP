@@ -1,0 +1,13 @@
+﻿.no-display {
+    display: none;
+}
+
+.option-title {
+    display: inline-block;
+    border-radius: 5px 0 0 5px;
+    border-right: none;
+}
+
+.option-delete {
+    border-radius: 0 5px 5px 0;
+}

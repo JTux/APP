@@ -8,7 +8,7 @@ namespace APollPoll.Services.Resources
 {
     public interface IService<TEntity, TCreate, TDetail, TListItem, TUpdate>
     {
-        Task<bool> CreateAsync(TCreate createModel);
+        Task<int> CreateAsync(TCreate createModel);
         Task<TDetail> GetByIdAsync(int id);
         Task<List<TListItem>> GetAllAsync();
         Task<bool> UpdateAsync(TUpdate model);

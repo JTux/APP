@@ -29,6 +29,7 @@ namespace APollPoll.Web
                       "~/Content/Requests.css",
                       "~/Content/Tables.css",
                       "~/Content/Footer.css",
+                      "~/Content/addOption.css",
                       "~/Content/site.css"));
         }
     }

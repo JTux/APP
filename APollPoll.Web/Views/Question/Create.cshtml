@@ -1,4 +1,6 @@
-﻿@model APollPoll.Services.Questions.Models.QuestionCreate
+﻿@using APollPoll.Services.Questions.Models;
+@using APollPoll.Services.Options.Models;
+@model QuestionCreate
 
 @{
     ViewBag.Title = "Create";
@@ -19,7 +21,7 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @Html.TextAreaFor(model => model.Title, new { @class = "form-control", style="min-width: 100%; width: 100%;"} )
+                    @Html.TextAreaFor(model => model.Title, new { @class = "form-control", style = "min-width: 100%; width: 100%;" })
                     @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
                 </div>
             </div>
@@ -34,15 +36,29 @@
                 </div>
             </div>
 
+            <div class="text-center">
+                <input id="btnAddOption" class="btn btn-default" style="margin-bottom: 5px;" type="button" onclick="addOptionDiv()" value="Add New Option" />
+            </div>
+            <div id="optionTable" class="text-center">
+            </div>
+
             <div class="form-group">
-                <div class="pull-right" style="margin-right: 15px;">
-                    <input type="submit" value="Create" class="btn btn-danger" />
+                <div class="text-center">
+                    <input type="submit" value="Submit Question" class="btn btn-danger" />
                     @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-dark" })
                 </div>
             </div>
         </div>
     }
 </div>
+
+<script src="~/Scripts/addOption.js"></script>
+<script>
+function addOptionDiv() {
+    @{Model.Options.Add(new OptionCreate());}
+        addOption("#optionTable");
+    }
+</script>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

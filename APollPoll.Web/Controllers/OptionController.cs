@@ -24,7 +24,7 @@ namespace APollPoll.Web.Controllers
             if (!ModelState.IsValid)
                 return View(ModelState);
 
-            if (await _service.CreateAsync(model))
+            if (await _service.CreateAsync(model) == 1)
                 return RedirectToAction("Details", "Question", new { id = model.QuestionId });
 
             ModelState.AddModelError("Save Failed", "Could not save the answer.");

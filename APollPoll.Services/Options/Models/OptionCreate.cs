@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
@@ -16,5 +17,8 @@ namespace APollPoll.Services.Options.Models
         [Required]
         [Range(0, int.MaxValue)]
         public int QuestionId { get; set; }
+
+        [DefaultValue(true)]
+        public bool IsValid { get; set; }
     }
 }

@@ -27,7 +27,7 @@ namespace APollPoll.Web.Controllers
         [HttpGet]
         public ActionResult Create()
         {
-            return View();
+            return View(new QuestionCreate());
         }
 
         [HttpPost]
@@ -37,11 +37,13 @@ namespace APollPoll.Web.Controllers
             if (!ModelState.IsValid)
                 return View(ModelState);
 
-            if (await _service.CreateAsync(model))
+            model.Options = model.Options.Where(o => o.IsValid).ToList();
+
+            if (await _service.CreateAsync(model) == 1 + model.Options.Count)
                 return RedirectToAction(nameof(Index));
 
             ModelState.AddModelError("Save Failed", "Could not save the question.");
-            return View(ModelState);
+            return View(model);
         }
 
         [HttpGet]

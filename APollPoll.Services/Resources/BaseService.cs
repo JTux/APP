@@ -28,11 +28,11 @@ namespace APollPoll.Services.Resources
         }
 
         // Create
-        public async Task<bool> CreateAsync(TCreate createModel)
+        public async Task<int> CreateAsync(TCreate createModel)
         {
             var entity = GetEntity(createModel);
             EntityDbSet.Add(entity);
-            return await _context.SaveChangesAsync() == 1;
+            return await _context.SaveChangesAsync();
         }
 
         // Read

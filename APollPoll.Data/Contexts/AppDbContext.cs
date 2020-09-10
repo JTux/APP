@@ -11,7 +11,7 @@ namespace APollPoll.Data.Contexts
 {
     public class AppDbContext : DbContext
     {
-        public AppDbContext() : base("APP") { }
+        public AppDbContext() : base("DefaultConnection") { }
 
         public DbSet<QuestionEntity> Questions { get; set; }
         public DbSet<OptionEntity> Options { get; set; }

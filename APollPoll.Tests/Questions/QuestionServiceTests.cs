@@ -29,7 +29,7 @@ namespace APollPoll.Tests.Questions
             };
 
             var result = _service.CreateAsync(createModel).Result;
-            Assert.IsTrue(result);
+            Assert.IsTrue(result == 1);
         }
 
         [TestMethod]
