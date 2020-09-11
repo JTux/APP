@@ -1,3 +1,4 @@
+using APollPoll.Services.Accounts.Service;
 using APollPoll.Services.Options.Service;
 using APollPoll.Services.Questions.Service;
 using APollPoll.Web.App_Start;
@@ -45,6 +46,7 @@ namespace APollPoll.Web
 
             container.RegisterType<IQuestionService, QuestionService>();
             container.RegisterType<IOptionService, OptionService>();
+            container.RegisterType<IAccountService, AccountService>();
 
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
         }

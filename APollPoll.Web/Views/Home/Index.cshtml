@@ -2,9 +2,14 @@
     ViewBag.Title = "Home Page";
 }
 
+
 <div class="jumbotron">
     <h1 class="text-center">A Poll Poll</h1>
     <p class="lead text-center">A Poll Poll, or APP for short, is an application that allows you to help create some of the great polls of the century. You want good polls? Well then give good questions! We'll then turn around and use these questions in the class polls. This is your chance to start great things!</p>
     <p class="text-center">That said, this can easily be shut down, so don't abuse it. :)</p>
     <p class="text-center"><a href="/Question" class="btn btn-danger btn-lg">Do your part &raquo;</a></p>
 </div>
+@if (User.Identity.IsAuthenticated)
+{
+    <a href="https://www.youtube.com/watch?v=Hm3JodBR-vs" target="_blank" class="text-center">Hi! You're logged in, isn't that neat. How neat is that? That's pretty neat. </a>
+}

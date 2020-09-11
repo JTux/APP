@@ -1,4 +1,5 @@
-﻿using APollPoll.Services.Options.MapProfile;
+﻿using APollPoll.Services.Accounts.MapProfile;
+using APollPoll.Services.Options.MapProfile;
 using APollPoll.Services.Questions.MapProfile;
 using AutoMapper;
 using System;
@@ -16,6 +17,7 @@ namespace APollPoll.Web.App_Start
             {
                 cfg.AddProfile<QuestionMapProfile>();
                 cfg.AddProfile<OptionMapProfile>();
+                cfg.AddProfile<AccountMapProfile>();
             });
 
             return config.CreateMapper();
